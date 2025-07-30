@@ -3,13 +3,20 @@ import pg from "pg";
 
 const app = express();
 
+// const db = new pg.Client({
+//   user: "postgres",
+//   password: "password",
+//   host: "localhost",
+//   database: "Event Management",
+//   port: 5432,
+// });
+
 const db = new pg.Client({
-  user: "postgres",
-  password: "password",
-  host: "localhost",
-  database: "Event Management",
-  port: 5432,
-});
+  connectionString: "postgresql://event_management_yg5p_user:SWDO4boWRgZaWauJXEPvl44b0cz3n2IO@dpg-d25268ili9vc73erj380-a.oregon-postgres.render.com/event_management_yg5p",
+  ssl: {
+    rejectUnauthorized: false
+  }
+})
 
 db.connect().then(() => console.log("DB connected"));
 app.use(express.json());

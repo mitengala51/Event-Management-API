@@ -69,41 +69,6 @@ npm start
 
 ### Testing the API
 
-#### Using curl (Local Development)
-
-```bash
-# Create a user
-curl -X POST http://localhost:3000/api/create-user \
-  -H "Content-Type: application/json" \
-  -d '{"name": "John Doe", "email": "john@example.com"}'
-
-# Create an event
-curl -X POST http://localhost:3000/api/create-events \
-  -H "Content-Type: application/json" \
-  -d '{"title": "Tech Conference 2024", "date": "2024-12-15", "location": "Mumbai Convention Center", "capacity": 500}'
-
-# Register for an event
-curl -X POST http://localhost:3000/api/register \
-  -H "Content-Type: application/json" \
-  -d '{"user_id": 1, "event_id": 1}'
-```
-
-#### Using curl (Production)
-
-```bash
-# Create a user (Production URL)
-curl -X POST https://event-management-api-1-9a9f.onrender.com/api/create-user \
-  -H "Content-Type: application/json" \
-  -d '{"name": "John Doe", "email": "john@example.com"}'
-
-# Create an event (Production URL)
-curl -X POST https://event-management-api-1-9a9f.onrender.com/api/create-events \
-  -H "Content-Type: application/json" \
-  -d '{"title": "Tech Conference 2024", "date": "2024-12-15", "location": "Mumbai Convention Center", "capacity": 500}'
-```
-
-**⚠️ Production Note**: First request may take 50+ seconds due to Render's free tier spin-up time.
-
 #### Using Postman
 
 1. Import the following endpoints into Postman
